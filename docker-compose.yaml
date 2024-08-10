@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./I-school-FE
+    ports:
+      - "3030:3030"
+    depends_on:
+      - backend
+    networks:
+      - mynetwork
+
+  backend:
+    build: ./I-school-BE
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./I-school-BE/.env
+    depends_on:
+      - db
+    networks:
+      - mynetwork
+
+  db:
+    image: postgres:13.0
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: FastApi_BE
+    ports:
+      - "5432:5432"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge

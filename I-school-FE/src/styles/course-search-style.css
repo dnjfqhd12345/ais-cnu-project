@@ -1,0 +1,131 @@
+/* styles/course-search-style.css */
+
+/* Flex container for vertical alignment */
+.component-arrangement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  
+  .course-block {
+    width: 100%;
+    border: 1px solid #cccccc; /* 다른 경계선 추가 */
+    padding: 5px; /* 패딩을 추가하여 내부 여백 조절 */
+    margin-bottom: 0px; /* 아래쪽에 여백 제거 */
+    border-radius: 5px;
+    background-color: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    border-bottom: 1px solid #cccccc; /* 아래 경계선만 적용 */
+    border-top: 1px;
+    border-right: 1px;
+    border-left:1px;
+    }
+  .course-block:hover{
+    background-color: #cecece;
+  }
+  .course-block h3,
+  .course-block p {
+  margin: 5px 0; /* 기본 마진을 줄여서 요소 간격 줄이기 */
+  padding: 0; /* 패딩 제거 */
+  }
+
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    flex-grow: 1; /* Ensure the header takes available space */
+  }
+  
+
+  .fix-top {
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  /* 검색창과 버튼을 감싸는 컨테이너 */
+.search-container {
+  position: relative;
+}
+.search-container-alignment {
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 320px;
+  padding:8px 10px;
+  border: 0px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #eeeeee;
+  color: black;
+  font-size: 16px; /* 폰트 크기 설정 */
+  outline: none;
+}
+.search-bar::placeholder {
+  color: rgb(59, 59, 59); /* placeholder 텍스트 색상 */
+}
+
+/* 검색 버튼 스타일 */
+.search-button {
+  position: absolute;
+  right: 10px; /* 검색창 내부 오른쪽 끝에 위치 */
+  top: 50%;
+  background-color: transparent;
+  transform: translateY(-50%);
+  border: none;
+  color: black;
+  padding: 4px;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.search-button img {
+  width: 20px;
+  height: 20px;
+}
+
+
+  .courses-container {
+    width: 90%;
+    max-width: 800px;
+    max-height: 550px;
+    overflow-y: auto;
+    margin-top: 0px;
+    overflow-x: hidden;
+}
+
+/* 스크롤바 스타일링 (웹킷 기반 브라우저용) */
+.courses-container::-webkit-scrollbar {
+    width: 8px; /* 스크롤바 너비 */
+}
+
+.courses-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* 스크롤바 배경색 */
+}
+
+.courses-container::-webkit-scrollbar-thumb {
+    background: #888; /* 스크롤바 색상 */
+}
+
+.courses-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* 스크롤바 호버 색상 */
+}
+
+.arrow-icon{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}  
+
+.header-container {
+  position: relative;
+  display: flex;
+  padding: 10px;
+}

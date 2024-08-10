@@ -1,0 +1,63 @@
+
+.average-rate {
+    display: flex;
+    align-items: center;
+    margin: 16px;
+    font-size: 18px;
+}
+  
+.star-image {
+    width: 20px; /* 원하는 크기로 조정 */
+    height: 20px; /* 원하는 크기로 조정 */
+    margin: 0 2px; /* 텍스트와 이미지 사이의 간격 조정 */
+}
+  
+.small-star-image {
+    width: 10px; /* 작은 별 크기로 조정 */
+    height: 10px; /* 작은 별 크기로 조정 */
+    margin: 0 1px; /* 텍스트와 이미지 사이의 간격 조정 */
+}
+  
+.review-card {
+    border-radius: 0; /* 둥근 모서리 제거 */
+    box-shadow: none; /* 그림자 제거 */
+    border-bottom: 1px solid #ccc; /* 아래쪽 선 추가 */
+    margin-bottom: 10px; /* 카드 간 간격 조정 */
+    width: 353px;
+}
+
+.review-card-content {
+    padding-bottom: 0; /* 아래쪽 여백 제거 */
+}
+
+  
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 16px;
+    margin: 0px;
+}
+
+.rating-title {
+    flex-grow: 1;
+}
+
+.rating-button {
+    background-color: #f06292; /* 버튼 색상 조정 */
+    color: white;
+    border-radius: 20px; /* 둥근 모서리 */
+    padding: 5px 15px;
+    text-transform: none; /* 버튼 텍스트 소문자로 유지 */
+}
+
+.rating-button:hover {
+    background-color: #ec407a; /* 버튼 호버 색상 조정 */
+}
+
+.review-container {
+    height: calc(100vh - 150px); /* Adjust this value if necessary to match your navigation height */
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 60px; /* Ensure content doesn't overlap with navigation */
+  }

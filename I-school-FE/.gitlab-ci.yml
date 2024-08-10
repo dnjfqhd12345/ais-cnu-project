@@ -1,0 +1,65 @@
+# stages:
+#   - test
+#   - build
+#   - build_docker
+#   - deploy
+
+# lint_job:
+#   stage: test
+#   image: node:20-alpine
+#   tags:
+#     - ais-visitor-register
+#   script:
+#     - npm ci
+#     - npm run lint
+#   only:
+#     - merge_requests
+
+# build_job:
+#   stage: build
+#   image: node:20-alpine
+#   tags:
+#     - ais-visitor-register
+#   script:
+#     - npm ci
+#     - npm run build
+#   only:
+#     - merge_requests
+
+# build_docker:
+#   stage: build_docker
+#   image: docker:20.10.14
+#   services:
+#     - docker:dind
+#   variables:
+#     DOCKER_HOST: tcp://docker:2375/
+#     DOCKER_TLS_CERTDIR: ""
+#   script:
+#     - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
+#     - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG .
+#     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+#   only:
+#     - develop
+#   tags:
+#     - ais-visitor-dk
+
+# deploy:
+#   stage: deploy
+#   image: docker:20.10.14
+#   services:
+#     - docker:dind
+#   variables:
+#     DOCKER_HOST: tcp://docker:2375/
+#     DOCKER_TLS_CERTDIR: ""
+#   script:
+#     - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
+#     - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+#     - docker stop web || true
+#     - docker rm web || true
+#     - docker run --name web -d -p 3030:3030 $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+#   environment:
+#     name: production
+#   only:
+#     - main
+#   tags:
+#     - ais-visitor-cd

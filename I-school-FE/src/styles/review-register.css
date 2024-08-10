@@ -1,0 +1,53 @@
+.rating-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.rating-title {
+    margin-top: 20px;
+    margin-bottom: 16px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 16px;
+    margin-left: 10px;
+}
+
+.MuiRating-root {
+    font-size: 2rem;
+}
+
+.rating-textarea {
+    margin-bottom: 16px !important;
+    border-radius: 20%; 
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.submit-button {
+    background-color: #ff85a2 !important;
+    color: white !important;
+    width: 90%;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.register-header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 16px;
+}

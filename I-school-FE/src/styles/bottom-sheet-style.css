@@ -1,0 +1,203 @@
+
+.bottom-sheet-container {
+  width: 100%;
+  height: 70%;
+  background-color: white;
+  padding: 16px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box; /* 박스 사이징 설정 */
+}
+
+/* 중앙 정렬 및 페이지 내부 패딩 */
+.fix-top {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+/* 검색바레이아웃 */
+.search-bar { 
+  width: 180px;
+  height: 30px; 
+  border: 0px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #dbdada;
+  color: black;
+  font-size: 14px; 
+  outline: none;
+  padding-left: 7px;
+
+}
+/* 검색바 기본텍스트 색 */
+.search-bar::placeholder{
+  color: rgb(0, 0, 0); 
+}
+
+.courses-container {
+  width: 100%;
+  height: 400px;
+  max-height: 450px;
+  min-height: 400px;
+  overflow-y: auto;
+  margin-top: 0px;
+  overflow-x: hidden;
+}
+/* 스크롤바 스타일링 (웹킷 기반 브라우저용) */
+.courses-container::-webkit-scrollbar {
+  width: 8px; /* 스크롤바 너비 */
+}
+
+.courses-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* 스크롤바 배경색 */
+}
+
+.courses-container::-webkit-scrollbar-thumb {
+  background: #888; /* 스크롤바 색상 */
+}
+
+.courses-container::-webkit-scrollbar-thumb:hover {
+  background: #555; /* 스크롤바 호버 색상 */
+}
+
+.course-block {
+  width: 100%;
+  border: 1px solid #cccccc;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-bottom: 0px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  text-align: left;
+  position: relative;
+  border-bottom: 1px solid #cccccc; 
+  border-top: 1px;
+  border-right: 1px;
+  border-left:1px; 
+  /* 아래쪽만 선이 생기게 하는 4줄 코드 */
+}
+
+.course-block h3,
+.course-block p {
+  margin: 3px 0;
+  padding: 0;
+}
+
+/* 별과 우측 강의평 및 추가하기 버튼을 모두 갖는 하단 컨테이너 */
+.rating-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.upper-button {
+  font-size: 14px; /* 글꼴 크기 축소 */
+  padding: 2px 8px; /* 상하 2px, 좌우 8px 패딩으로 조정 */
+  border-radius: 8px; /* 둥근 모서리 설정 */
+  margin-right: 7px; /* 버튼 사이의 간격 */
+  background-color: #d2d2d2; /* 버튼 배경 색상 */
+  color: rgb(0, 0, 0); /* 버튼 텍스트 색상 */
+  border: none; /* 기본 테두리 제거 */
+  cursor: pointer; /* 클릭 커서 표시 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  min-width: 40px; /* 최소 너비 설정 */
+  max-width: 80px; /* 최대 너비 설정 */
+}
+.upper-button:hover{
+  background-color: #a7a8a9;
+}
+
+
+.action-button {
+  font-size: 12px; /* 글꼴 크기 축소 */
+  padding: 2px 8px; /* 상하 2px, 좌우 8px 패딩으로 조정 */
+  border-radius: 12px; /* 둥근 모서리 설정 */
+  margin-right: 0px; /* 버튼 사이의 간격 */
+  background-color: #d2d2d2; /* 버튼 배경 색상 */
+  color: rgb(0, 0, 0); /* 버튼 텍스트 색상 */
+  border: none; /* 기본 테두리 제거 */
+  cursor: pointer; /* 클릭 커서 표시 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  display: inline-block; /* 버튼 크기 조정 가능 */
+  min-width: 40px; /* 최소 너비 설정 */
+  max-width: 80px; /* 최대 너비 설정 */
+}
+
+.action-button:hover {
+  background-color: #a7a8a9;
+}
+
+.course-button {
+  font-size: 12px; /* 글꼴 크기 축소 */
+  padding: 2px 8px; /* 상하 2px, 좌우 8px 패딩으로 조정 */
+  border-radius: 12px; /* 둥근 모서리 설정 */
+  margin-right: 0px; /* 버튼 사이의 간격 */
+  background-color: #f976c7; /* 버튼 배경 색상 */
+  color: rgb(255, 255, 255); /* 버튼 텍스트 색상 */
+  border: none; /* 기본 테두리 제거 */
+  cursor: pointer; /* 클릭 커서 표시 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  display: inline-block; /* 버튼 크기 조정 가능 */
+}
+
+.course-button:hover {
+  background-color: #fc3796;
+}
+
+/* Additional styling for responsive design */
+@media (max-width: 768px) {
+  .course-block {
+    width: 90%;
+  }
+}
+
+.drawer-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-button{
+  width: 100%;
+  background-color: #f976c7;
+  /* margin: auto; */
+  padding: 6px;
+}
+
+.close-button:hover{
+  background-color: #fc3796;
+}
+
+.button-container{
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.reset-button{
+  width: 100%;
+  background-color: #cccccc;
+  margin: auto;
+  padding: 6px;
+}
+
+.reset-button:hover{
+  background-color: #777777;
+}
+
+.no-results-message{
+  text-align: center;
+  margin: 16px;
+}
